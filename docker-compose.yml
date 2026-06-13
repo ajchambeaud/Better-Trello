@@ -1,0 +1,22 @@
+services:
+  backend:
+    build: ./back
+    container_name: better-trello-backend
+    environment:
+      PORT: 3400
+    ports:
+      - "3400:3400"
+    restart: unless-stopped
+
+  frontend:
+    build: ./front
+    container_name: better-trello-frontend
+    environment:
+      # Browser talks to the backend directly (axios + socket.io), so this
+      # must be the host-reachable URL, not the compose service name.
+      VUE_APP_BACKEND_URL: http://localhost:3400
+    ports:
+      - "3401:3401"
+    depends_on:
+      - backend
+    restart: unless-stopped

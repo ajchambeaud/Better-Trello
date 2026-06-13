@@ -10,7 +10,7 @@
           </v-row>
           <v-row>
             <v-col align="right">
-              <v-btn v-if="sharing" small @click.prevent="share">udostępnij</v-btn>
+              <v-btn v-if="sharing" small @click.prevent="share">share</v-btn>
             </v-col>
           </v-row>
         </v-container>

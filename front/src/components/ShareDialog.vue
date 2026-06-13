@@ -7,7 +7,7 @@
 		<v-container fluid class="white">
 			<v-row>
 				<v-col>
-					<h1>Udostępnianie tablicy <i>{{board['name']}}</i></h1>
+					<h1>Sharing board <i>{{board['name']}}</i></h1>
 				</v-col>
 			</v-row>
 			<v-row>
@@ -22,7 +22,7 @@
 									style="background: white; "
 									/>
 									<v-btn class="ml-2" @click="addUser">
-										Dodaj użytkownika
+										Add user
 									</v-btn>
 					</v-form>
 					<v-alert
@@ -37,7 +37,7 @@
 			</v-row>
 			<v-row>
 				<v-col class="pb-0">
-					<h3>Użytkownicy posiadający dostęp</h3>
+					<h3>Users with access</h3>
 				</v-col>
 			</v-row>
 			<v-row>
@@ -58,14 +58,14 @@
 											<v-icon>mdi-account-remove</v-icon>
 										</v-btn>
 									</template>
-									<span>Usuń użytkownika z listy</span>
+									<span>Remove user from the list</span>
 								</v-tooltip>
 							</v-list-item-action>
 						</v-list-item>
 					</v-list>
 				</v-col>
 			</v-row>
-			<v-btn @click="closeDialog">Zamknij</v-btn>
+			<v-btn @click="closeDialog">Close</v-btn>
 		</v-container>
 	</v-dialog>
 </template>
@@ -97,7 +97,7 @@ export default {
 			.catch((err) => {
 				console.log(err);
 				this.error_visible = true;
-				this.error_msg = "Błąd podczas dodwania użytkownika. Upewnij się, że wpisany email jest poprawny."
+				this.error_msg = "Error while adding user. Make sure the entered email is correct."
 			});
 		},
 		removeUser: function(u) {
@@ -109,7 +109,7 @@ export default {
 			.catch((err) => {
 				console.log(err);
 				this.error_visible = true;
-				this.error_msg = "Błąd podczas usuwania użytkownika."
+				this.error_msg = "Error while removing user."
 			});
 		}
 	}

@@ -3,7 +3,7 @@
 
         <v-row>
             <v-col>
-                <h1>Lista tablic</h1>
+                <h1>Boards list</h1>
             </v-col>
         </v-row>
 
@@ -12,10 +12,10 @@
                 <v-card color="#89cff0">
                     <v-card-text>
                         <v-form ref="form">
-                            <v-text-field :rules="rules" hide-details="auto" label="Nazwa nowej tablicy" color="primary" v-model="new_board_name" @keypress.enter="addBoard">
+                            <v-text-field :rules="rules" hide-details="auto" label="New board name" color="primary" v-model="new_board_name" @keypress.enter="addBoard">
                                 <template v-slot:append>
                                     <v-btn depressed tile color="primary" class="ma-0" @click="addBoard">
-                                        Dodaj tablicę
+                                        Add board
                                     </v-btn>
                                 </template>	
                             </v-text-field>
@@ -31,7 +31,7 @@
 
 		<v-row>
             <v-col>
-                <h1>Udostępnione tablice innych użytkowników</h1>
+                <h1>Boards shared by other users</h1>
             </v-col>
         </v-row>
 
@@ -63,8 +63,8 @@
 				sharing_dialog_opened: false,
 				sharing_board: {name: "aa", shared_users: []},
 				rules: [
-					(value) => !!value || "Pole wymagane!",
-					(value) => (value || "").length <= 40 || "Maksymalna długość nazwy tablicy: 40 znaków!",
+					(value) => !!value || "Field is required!",
+					(value) => (value || "").length <= 40 || "Maximum board name length: 40 characters!",
 				]
 				// ,
 				// user: 
